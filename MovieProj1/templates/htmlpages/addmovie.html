@@ -1,0 +1,16 @@
+<html>
+    {%load static%}
+    <head>
+        <link rel="stylesheet" href="{% static 'css/style.css'%}">
+        
+    </head>
+    <body>
+        <h1> Add Movie Information</h1>
+        <form method='POST'>
+            {{amovie.as_p}}
+            {% csrf_token %}
+            <input type='submit'name='' value="Add Movie">
+
+        </form>
+    </body>
+</html>

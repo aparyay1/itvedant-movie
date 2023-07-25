@@ -1,0 +1,33 @@
+<html>
+    {%load static%}
+    <head>
+        <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    </head>
+
+    
+
+    <body>
+       {% if mlist%}
+            <table border="2">
+                <thead>
+                    <th>Movie Name</th>
+                    <th>Release Date</th>
+                    <th>Actor Name</th>
+                    <th>Actress Name</th>
+                    <th>Movie Ratings</th>
+                </thead>
+                          
+            {%for movie in mlist%}
+                <tr>
+                    <td>{{movie.movname}}</td>
+                    <td>{{movie.rel_date}}</td>
+                    <td>{{movie.actorname}}</td>
+                    <td>{{movie.actressname}}</td>
+                    <td>{{movie.rating}}</td>
+                </tr>  
+            {%endfor%}
+        {%else%}
+            <h1>Record is Not Found</h1>
+        {% endif%}
+    </body>
+</html>
